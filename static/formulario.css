@@ -70,6 +70,10 @@ header {
     margin-top: 5px;
 }
 
+#dias-feira {
+    display: none;
+}
+
 .campo label {
     font-weight: 600;
 }
@@ -109,5 +113,3 @@ textarea {
         width: 95%;
     }
 }
-
-

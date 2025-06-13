@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="formulario.css" media="screen">
+    <link rel="stylesheet" href="../static/formulario.css">
     <title>Inscrição</title>
 </head>
 <body>
@@ -14,7 +14,7 @@
         <p id="subtitulo">Complete suas informações</p>
     </header>
 
-    <form>
+    <form action="/register" method="POST">
         <fieldset class="grupo">
             <div class="campo">
                 <label for="nome"><strong>Nome</strong></label>
@@ -54,8 +54,24 @@
         </div>
 
         <div class="campo">
+            <label><strong>Já faz parte de alguma feira livre?</strong></label>
+            <label><input type="radio" name="feira" value="sim" onclick="verificar()">Sim</label>
+            <label><input type="radio" name="feira" value="nao" onclick="verificar()">Não</label>
+        </div>
+
+        <div id="dias-feira" class="campo">
+            <label><strong>Quais dias?</strong></label>
+                <label><input type="checkbox" name="dias" value="terça"> Terça</label>
+                <label><input type="checkbox" name="dias" value="quarta"> Quarta</label>
+                <label><input type="checkbox" name="dias" value="quinta"> Quinta</label>
+                <label><input type="checkbox" name="dias" value="sexta"> Sexta</label>
+                <label><input type="checkbox" name="dias" value="sábado"> Sábado</label>
+                <label><input type="checkbox" name="dias" value="domingo"> Domingo</label>
+        </div>
+
+        <div class="campo">
             <label for="produtos"><strong>Produtos/Alimentos que pretende vender</strong></label>
-            <select id="produtos">
+            <select id="produtos" name="produtos" required>
                 <option selected disabled value="">Selecione</option>
                 <option>Verduras</option>
                 <option>Frutas</option>
@@ -73,5 +89,6 @@
         <button class=botao type="submit">Concluir inscrição</button>
     </form>
     
+    <script src="../static/script.js"></script>
 </body>
 </html>
